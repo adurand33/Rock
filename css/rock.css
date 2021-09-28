@@ -150,8 +150,8 @@
   background-repeat: no-repeat;
 }
 
-.imgstone {
-  background-image: url("../img/1stone.png");
+.imgrock {
+  background-image: url("../img/1rock.png");
   background-position: 50% 50%;
   background-size: 80%;
 }

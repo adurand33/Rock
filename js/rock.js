@@ -6,17 +6,17 @@ var liveupdate = GetElt("liveupdate");
 var livebalance = GetElt("livebalance");
 var startover = GetElt("startover");
 
-var mystone = GetElt("mystone");
+var myrock = GetElt("myrock");
 var mypaper = GetElt("mypaper");
 var myscissors = GetElt("myscissors");
 
 // human
 
-mystone.addEventListener("click", function () {
+myrock.addEventListener("click", function () {
 
   const machine = Randomize(1, 3);
 
-  PlayStone(machine);
+  PlayRock(machine);
 });
 
 mypaper.addEventListener("click", function () {
@@ -39,7 +39,7 @@ startover.addEventListener("click", function () { Reset(); });
 
 // human play
 
-function PlayStone(machine) {
+function PlayRock(machine) {
 
   Play(machine, machine == 3 ? "win" : (machine == 2 ? "loose": "deuce"));
 }
@@ -88,7 +88,7 @@ function Play(random, result) {
 
   livebalanceh2.textContent = balance;
 
-  liveupdateimg.src = random == 1 ? "img/1stone.png" : (random == 2 ? "img/2paper.png" : "img/3scissors.png");
+  liveupdateimg.src = random == 1 ? "img/1rock.png" : (random == 2 ? "img/2paper.png" : "img/3scissors.png");
 
   liverobotimg.src = result == "win" ? "img/bwin.png" : (result == "loose" ? "img/cloose.png" : "img/ddeuce.png");
 }
