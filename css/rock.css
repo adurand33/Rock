@@ -14,9 +14,9 @@
 }
 
 * {
-  font-family: 'Open Sans';
+  font-family     : 'Open Sans';
   background-color: white;
-  color: #111;
+  color           : #111;
 }
 
 .greyed {

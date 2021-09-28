@@ -1,12 +1,11 @@
-// assign elements
-
-var title = GetElt("title");
-var gameplay = GetElt("gameplay");
-var startover = GetElt("startover");
+// assign
 
 var myrock = GetElt("myrock");
 var mypaper = GetElt("mypaper");
 var myscissors = GetElt("myscissors");
+
+var gameplay = GetElt("gameplay");
+var startover = GetElt("startover");
 
 // human
 
@@ -56,11 +55,13 @@ function PlayScissors(machine) {
 
 function Play(random, result) {
 
+  // inits
+
   if (random <= 0 || random > 3) return;
 
   let h2s = gameplay.querySelectorAll("h2");
   let imgs = gameplay.querySelectorAll("img");
-  let has = (h2s.length == 1 && imgs.length == 2) ? true : false;
+  let has = h2s.length == 1 && imgs.length == 2 ? true : false;
 
   if (!has) return;
 
@@ -73,6 +74,8 @@ function Play(random, result) {
   if (!has) return;
 
   let scores = [0, 0];
+
+  // scores
 
   GetScores(livebalanceh2.textContent, scores);
 
@@ -96,13 +99,15 @@ function Play(random, result) {
 
 function Reset() {
 
+  // inits
+
   const humanwins = "↣↣↣ H u m a n   W i n s ↢↢↢";
   const machinewins = "↝↝↝ M a c h i n e   W i n s ↜↜↜";
   const deuce = "←←← D  E  U  C  E →→→";
 
   let h2s = gameplay.querySelectorAll("h2");
   let imgs = gameplay.querySelectorAll("img");
-  let has = (h2s.length == 1 && imgs.length == 2) ? true : false;
+  let has = h2s.length == 1 && imgs.length == 2 ? true : false;
 
   if (!has) return;
 
@@ -114,9 +119,13 @@ function Reset() {
 
   if (!has) return;
 
+  // scores
+
   let scores = [0, 0];
 
   GetScores(livebalanceh2.textContent, scores);
+
+  // alert
 
   message = scores[0] > scores[1] ? humanwins : (scores[1] > scores[0] ? machinewins : deuce);
 
@@ -129,7 +138,7 @@ function Reset() {
   livewinnerimg.src = "img/aquestion.png";
 }
 
-// dom element
+// dom
 
 function GetElt(id) {
 
