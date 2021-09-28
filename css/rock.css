@@ -1,12 +1,14 @@
+/* factory settings */
+
 :root {
-  --size0: 0px;
-  --sizemini: 1px;
+  --size0    : 0px;
+  --sizemini : 1px;
   --sizemini2: 3px;
-  --sizetiny: 10px;
-  --sizestd: 12px;
-  --sizevast: 15px;
-  --sizebig1: 18px;
-  --sizebig2: 20px;
+  --sizetiny : 10px;
+  --sizestd  : 12px;
+  --sizevast : 15px;
+  --sizebig1 : 18px;
+  --sizebig2 : 20px;
   --sizehuge1: 24px;
   --sizehuge2: 36px;
 }
@@ -19,27 +21,27 @@
 
 .greyed {
  -webkit-filter: grayscale(100%);
-     -moz-filter: grayscale(100%);
-       -o-filter: grayscale(100%);
-      -ms-filter: grayscale(100%);
-          filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+      -o-filter: grayscale(100%);
+     -ms-filter: grayscale(100%);
+         filter: grayscale(100%);
 }
 
 .mybutton {
   background-color: #eee;
-  padding: var(--sizetiny);
-  padding-left: var(--sizehuge1);
-  padding-right: var(--sizehuge1);
-  display: inline-block;
-  font-size: var(--sizebig2);
-  font-weight: bolder;
-  border-radius: var(--sizevast);
+  padding         : var(--sizetiny);
+  padding-left    : var(--sizehuge1);
+  padding-right   : var(--sizehuge1);
+  display         : inline-block;
+  font-size       : var(--sizebig2);
+  font-weight     : bolder;
+  border-radius   : var(--sizevast);
 }
 
 .mybutton:hover {
   background-color: black;
-  font-weight: 900;
-  color: #eee;
+  font-weight     : 900;
+  color           : #eee;
 }
 
 .d-flex {
@@ -63,7 +65,7 @@
 }
 
 .justif-s {
-  flex-direction: column;
+  flex-direction : column;
   justify-content: space-between;
 }
 
@@ -100,17 +102,17 @@
 }
 
 .text-sub {
-  font-size:var(--sizebig1);
+  font-size     : var(--sizebig1);
   vertical-align: sub;
 }
 
 .text-base {
-  font-size:var(--sizebig1);
+  font-size     : var(--sizebig1);
   vertical-align: baseline;
 }
 
 .text-sup {
-  font-size:var(--sizebig1);
+  font-size     : var(--sizebig1);
   vertical-align: super;
 }
 
@@ -124,62 +126,62 @@
 
 .backcol-white {
   background-color: #fff;
-  border: -1px solid gray;
+  border          : 1px solid gray;
 }
 
 .backcol-grey {
   background-color: #eee;
-  border: -1px solid gray;
+  border          : 1px solid gray;
 }
 
 .box {
-  margin: var(--sizetiny);
-  padding: var(--sizetiny);
-  box-shadow:
+  margin       : var(--sizetiny);
+  padding      : var(--sizetiny);
+  border-radius: var(--sizemini2);
+  box-shadow   :
     rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  border-radius: 0;
 }
 
-/* game */
+/* specific settings */
 
 .tile {
-  width: 80px;
-  height: 80px;
-  background-size: 100%;
+  width            : 80px;
+  height           : 80px;
+  background-size  : 100%;
   background-repeat: no-repeat;
 }
 
 .imgrock {
-  background-image: url("../img/1rock.png");
+  background-size    : 80%;
+  background-image   : url("../img/1rock.png");
   background-position: 50% 50%;
-  background-size: 80%;
 }
 
 .imgpaper {
-  background-image: url("../img/2paper.png");
+  background-size    : 80%;
+  background-image   : url("../img/2paper.png");
   background-position: 50% 50%;
-  background-size: 80%;
 }
 
 .imgscissors {
-  background-image: url("../img/3scissors.png");
+  background-size    : 80%;
+  background-image   : url("../img/3scissors.png");
   background-position: 50% 50%;
-  background-size: 80%;
 }
 
 #gamename h1 {
   font-size: var(--sizehuge2);
-  margin: var(--size0);
+  margin   : var(--size0);
 }
 
 #gameplay h1 {
-  font-size: var(--sizehuge2);
-  margin: var(--size0);
+  font-size    : var(--sizehuge2);
+  margin       : var(--size0);
   margin-bottom: var(--sizetiny);
 }
 
 #gameplay h2 {
   font-size: var(--sizehuge2);
-  margin: var(--size0);
+  margin   : var(--size0);
 }

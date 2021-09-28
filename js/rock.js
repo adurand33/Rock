@@ -2,8 +2,6 @@
 
 var title = GetElt("title");
 var gameplay = GetElt("gameplay");
-var liveupdate = GetElt("liveupdate");
-var livebalance = GetElt("livebalance");
 var startover = GetElt("startover");
 
 var myrock = GetElt("myrock");
@@ -60,17 +58,17 @@ function Play(random, result) {
 
   if (random <= 0 || random > 3) return;
 
-  let imgs = gameplay.querySelectorAll("img");
   let h2s = gameplay.querySelectorAll("h2");
-  let has = (imgs.length == 2 && h2s.length == 1) ? true : false;
+  let imgs = gameplay.querySelectorAll("img");
+  let has = (h2s.length == 1 && imgs.length == 2) ? true : false;
 
   if (!has) return;
 
-  let liveupdateimg = imgs[0];
-  let liverobotimg = imgs[1];
   let livebalanceh2 = h2s[0];
+  let livemachineimg = imgs[0];
+  let livewinnerimg = imgs[1];
 
-  has = liveupdateimg != null && liverobotimg != null && livebalanceh2 != null ? true : false;
+  has = livebalanceh2 != null && livemachineimg != null && livewinnerimg != null ? true : false;
 
   if (!has) return;
 
@@ -81,16 +79,17 @@ function Play(random, result) {
   switch (result) {
 
     case "win": scores[0]++; break; // human score
-    case "loose": scores[1]++; break; // random score
+
+    case "loose": scores[1]++; break; // machine score
   }
 
   let balance = scores[0] + " / " + scores[1];
 
   livebalanceh2.textContent = balance;
 
-  liveupdateimg.src = random == 1 ? "img/1rock.png" : (random == 2 ? "img/2paper.png" : "img/3scissors.png");
+  livemachineimg.src = random == 1 ? "img/1rock.png" : (random == 2 ? "img/2paper.png" : "img/3scissors.png");
 
-  liverobotimg.src = result == "win" ? "img/bwin.png" : (result == "loose" ? "img/cloose.png" : "img/ddeuce.png");
+  livewinnerimg.src = result == "win" ? "img/bwin.png" : (result == "loose" ? "img/cloose.png" : "img/ddeuce.png");
 }
 
 // reset
@@ -99,19 +98,19 @@ function Reset() {
 
   const humanwins = "↣↣↣ H u m a n   W i n s ↢↢↢";
   const machinewins = "↝↝↝ M a c h i n e   W i n s ↜↜↜";
-  const deuce = "←←← D E U C E →→→";
+  const deuce = "←←← D  E  U  C  E →→→";
 
-  let imgs = gameplay.querySelectorAll("img");
   let h2s = gameplay.querySelectorAll("h2");
-  let has = (imgs.length == 2 && h2s.length == 1) ? true : false;
+  let imgs = gameplay.querySelectorAll("img");
+  let has = (h2s.length == 1 && imgs.length == 2) ? true : false;
 
   if (!has) return;
 
-  let liveupdateimg = imgs[0];
-  let liverobotimg = imgs[1];
   let livebalanceh2 = h2s[0];
+  let livemachineimg = imgs[0];
+  let livewinnerimg = imgs[1];
 
-  has = liveupdateimg != null && liverobotimg != null && livebalanceh2 != null ? true : false;
+  has = livebalanceh2 != null && livemachineimg != null && livewinnerimg != null ? true : false;
 
   if (!has) return;
 
@@ -125,8 +124,9 @@ function Reset() {
 
   livebalanceh2.textContent = "0 / 0";
 
-  liveupdateimg.src = "img/aquestion.png";
-  liverobotimg.src = "img/aquestion.png";
+  livemachineimg.src = "img/aquestion.png";
+
+  livewinnerimg.src = "img/aquestion.png";
 }
 
 // dom element
@@ -167,7 +167,9 @@ function GetScores(balance, scores) {
 function Wait() {
 
   for (i = 0; i < 10000; i++) {
+
     for (j = 0; j < 10000; j++) {
+
     }
   }
 }
